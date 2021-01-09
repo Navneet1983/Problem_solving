@@ -1,0 +1,51 @@
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+
+class MinSizeSubArraySum {
+public:
+
+	int min(int a, int b)
+	{
+		if (a < b)
+			return a;
+		else
+			return b;
+	}
+	int minSubArrayLen(int s, vector<int>& nums) {
+
+		int totalLength = nums.size();
+		int minLength = INT_MAX;
+		int windowSum = 0;
+		int windowStart = 0;
+
+		for (int windowEnd = 0; windowEnd < nums.size(); windowEnd++)
+		{
+			windowSum += nums[windowEnd];
+
+			while (windowSum >= s)
+			{
+				minLength = min(minLength, windowEnd - windowStart + 1);
+				windowSum -= nums[windowStart++];
+			}
+
+
+		}
+		return (minLength != INT_MAX) ? minLength : 0;
+	}
+};
+
+int main()
+{
+	MinSizeSubArraySum obj;
+
+	int minLength;
+	vector<int> myVec = { 1,2,3,4,5 };
+	minLength = obj.minSubArrayLen(15,myVec);
+
+ 	std::cout << minLength << std::endl;
+
+	return 0;
+}
