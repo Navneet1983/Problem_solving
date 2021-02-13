@@ -1,0 +1,23 @@
+
+/*
+    
+   This file contains the function to find the largest element in the array with time complexity of O(n).
+   
+   Input argument :- < int array, int size > 
+
+*/
+
+int getLargestElement ( int arr[] , int size )
+{
+   int res_index = 0;
+   
+   for(int i=1; i<size ; i++ ) 
+   {
+      if( arr[i] >  arr[res_index] )
+      {
+          res_index = i;
+      }
+   }
+   
+   return res_index;
+}
