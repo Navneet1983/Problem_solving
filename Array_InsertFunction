@@ -1,0 +1,27 @@
+/*
+
+This function will used for insert the element in the array and return the new size of the array.
+
+Input arguments < int array, int size_of_array, int Number_Tobe_Insert, int Position_where_insert, int Capacity_Array >
+
+return value New_size_of_Array
+
+*/
+
+int Insert_Array ( int arr[], int size, int number, int capacity_array, int position_array)
+{ 
+    if( size == capacity_array)
+    {
+      return size;
+    }
+    int index  = position_array -1;
+    
+    for(int i = size-1; i>= index = i--)
+    {
+      arr[i+1] = arr[i];
+    }
+    arr[index] = x;
+    
+    return (size+1);
+    
+}
