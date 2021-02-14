@@ -1,0 +1,19 @@
+
+/* 
+    This file contain the function to find out whether the array is sorted or not.
+    Time Complexity :=> O(n)
+*/
+
+bool is_Array_Sorted ( int a[], int size )
+{
+    for ( int i = 1; i<size; i++ )
+    {
+      if( a[i] < a[i-1] )
+      {
+        return false;
+      }
+          
+    }
+    
+    return true;
+}
