@@ -1,0 +1,27 @@
+
+/*
+    This file contains the function which is used for reversing the array.
+    
+    In this function basically we will maintain two variable which contain Index value High and Low.
+    So we will check the condition in loop ( low< high ) we will swap the value of index untill these condition fails.
+    
+    when the condition is failed we will come out of the loop and then we will get the reverse array.
+    
+*/
+
+void reverse_Array ( int a[] , int size )
+{
+  int lower_index = 0;
+  int higher_index = size-1;
+  
+  while( lower_index < higher_index )
+  {
+    int temp = a[lower_index];
+    a[lower_index] = a[higher_index];
+    a[higher_index] = temp;
+     lower_index++;
+     higher_index--;
+  }
+}
+
+
