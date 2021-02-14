@@ -1,0 +1,18 @@
+
+/*
+    This file contain the function which is used to rotate the array left sight by one.    
+    Time Complexity :=> O(n)  
+*/
+
+void left_rotate_byOne ( int a[], int size )
+{
+    int temp_variable = a[0];
+    
+    for( int i=1; i<size; i++ )
+    {
+      a[i-1] = a[i]; 
+    }
+    
+    a[size-1] = temp;
+}
+
