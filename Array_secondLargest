@@ -1,0 +1,34 @@
+/*
+
+This file contains the function which helps to find out the second largest number or element in the array.
+   
+In this function we will maintain Largest and SecondLargest at the same time.
+  
+*/
+
+int Array_secondLargest( int a[], int size )
+{
+
+  int second_Largest = -1;
+  int largest = 0;
+  
+  for( int i = 1; i<size ; i++)
+  {
+    if( a[i] > a[largest] )
+    {
+      second_Largest = largest;
+      largest = i;
+    }
+    
+    else if ( a[i] != a[largest] )
+    {
+      if( ( second_Largest == -1 ) || ( a[i] > a[second_Largest] ) )
+      {
+        second_Largest = i;
+      }
+      
+    }
+  }
+  
+  return second_largest;
+}
