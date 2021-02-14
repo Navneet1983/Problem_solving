@@ -1,0 +1,27 @@
+/*
+
+    This file contains the function to rotate the array to the left by given key value times.
+    
+    time omplexity O(n) with theta(keyvalue) times space complexity
+
+*/
+
+void left_rotate_by_GivenKey ( int a[] , int size , int key )
+{
+    int temp[key];
+    for( int i=0; i<key; i++ )
+    {
+     temp[i] = a[i]; 
+    }
+    
+    for( int i=key; i<size; i++ )
+    {
+      a[i-key] = a[i];
+    }
+    
+    for( int i=0; i<key; i++ )
+    {
+      a[size-key+i] = temp[i];
+    }
+    
+}
