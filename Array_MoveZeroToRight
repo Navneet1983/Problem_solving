@@ -1,0 +1,28 @@
+/*
+    This file contain the function to move all the zeroes to right side of the array.
+    Time Complexity O(n).
+    
+    In this problem we will take the count of Non-Zero number, the value of count is nothing but the index of First_zero_element.
+    
+    whenever the next time we got the Non-zero element we will swap the element with Count index.
+    
+    with that approach we will get all the zeroes to the right side.
+*/
+
+
+void move_zero_to_right ( int a[], int size )
+{
+
+  int count = 0;
+  
+  for ( int i=0; i<size; i++ )
+  {
+    if ( a[i]!=0 )
+    {
+        swap ( a[i], a[count] );
+        count++;
+    }
+  }
+}
+
+For the swap function we need to include the header file  #include<algorithm>.
