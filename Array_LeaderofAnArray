@@ -1,0 +1,25 @@
+/*
+In this program we are finding the leader elements of an Array , it means that An element will be an leader if there is 
+NO any element right side of it is bigger than this.
+
+
+There are two methods of it, first is naive solution O(n^2) and second one is O(n).
+in second method it will print the Leaders from right to left.
+
+*/
+
+void LeadersOfAnArray( int arr[], int size )
+{
+  int Curr_leader = arr[size - 1];
+  
+  cout << Curr_leader << endl;
+  
+  for( int i = size-2 ; i >=0 ; i-- )
+  {
+      if(Curr_leader < arr[i])
+      {
+        Curr_leader = arr[i];
+        cout << Curr_leader << endl;
+      }
+  }
+}
