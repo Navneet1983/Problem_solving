@@ -1,0 +1,24 @@
+/*
+    Maximum value of a[j] - a[i]  where j>i
+    
+    In this problem we are finding the maximum difference between the pair of the element.
+    for that we will store the minimum value and than we find the difference of it with rest of the element as well we will check whether this element is greater than minimum value or not.
+    if it is less than minimum we will update the minimum value as well.
+    
+*/
+
+
+int MaximumDifference (int arr[], int size )
+{
+    int res = arr[1] - arr[0];
+    int minimum_value = arr[0];
+    
+    for(int i = 1; i<size; i++)
+    {
+      res = max ( res, arr[i] - minimum_value);
+      minimum_value = min(minimum_value , arr[i]);
+    }
+    
+    return res;
+    
+}
