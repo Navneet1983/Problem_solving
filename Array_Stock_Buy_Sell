@@ -1,0 +1,29 @@
+/*
+
+In this problem we already know the prize of stock in upcoming days.
+we can buy the stock at any day but we need to sell that in any upcoming days.
+we have to make maximum profit out of it.
+
+To solve that this problem we need to buy the stock it has a low price and sell than it has high price .
+for selling we need to see whether stock price of today is greater next day than we can sell that.
+
+
+*/
+
+int maximum_Profit ( int stockPrice[], int n ) 
+{
+  int gProfit = 0;
+  
+  for( int i=1; i<n; i++ )
+  {
+    if( stockPrice[i] > stockPrice[i-1] )
+        gProfit += ( stockPrice[i] - stockPrice[i-1] );
+  }
+  return gProfit;
+}
+
+/*
+  In Above program we are actually adding the difference between a[i] - a[i-1] if a[i] > a[i-1];
+  if we do that in a single loop we will add all the profit in one shot.
+
+*/
