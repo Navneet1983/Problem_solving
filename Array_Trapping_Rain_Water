@@ -1,0 +1,38 @@
+/*
+    
+    In this problem we have and Array which is denoting the BAR of a unit.
+    in between the Bar we can store the water, here we need to find out 
+    how much water we can store in between the BAR.
+    
+    To solve this problem we need to find out the max element of left most corner and 
+    max element of right most corner. this we need find out for each and every element.
+    and store all the value of Lmax and Rmax in array.
+ 
+ */
+ 
+ int getWater ( int arr[], int n )
+ {
+    int res = 0;
+    
+    int lmax[n], rmax[n];
+    
+    lmax[0] = arr[0];
+    
+    for ( int i =1; i<n ;i++ )
+      lmax[i] = max( arr[i], lmax[i-1]); // store all the left most value to the array for each element
+      
+    rmax[n-1] = arr[n-1];
+    
+    for ( int n-2; i>=0; i-- )
+      rmax[i] = max ( arr[i], rmax[i+1]); // store all the right most value to the array for each element
+      
+   //============== formula to find the store of water ===================
+   
+   for ( int i=1; i<n-1 ;i++ )
+   {
+      res = res + ( min( lmax[i], rmax[i]) - arr[i] );
+   }
+   
+   return res;
+      
+ }
