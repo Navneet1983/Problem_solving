@@ -1,0 +1,38 @@
+/*
+  
+  In this problem we need to find out the maximum consecutive 1's in a array.
+  
+  i/p arr[] = { 0,1,1,0,1,1,1 }
+   
+   o/p = 3; 
+   
+   to solve this problem we will we should have two variable 
+   1. current 
+   2. result 
+   
+   every tiime when we get value 0 we will made current = 0  and when we get 1, we will increment the current and compare with result and store the whoever is maximum to result.
+  with these approach we can store o/p to the result and we will achieve our our output in 0(n). 
+  
+  
+  
+*/ 
+
+
+int Maximum_consecutiveOnes ( int arr[] , int n)
+{
+  int res = 0;
+  int curr = 0;
+  
+  for( int i =0;i<n ;i++ )
+  {
+    if ( arr[i] == 0)
+      curr = 0;
+    else
+    {
+      curr++;
+      res = max ( curr, res );
+    }
+  }
+  
+  return res;
+}
