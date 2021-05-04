@@ -1,0 +1,41 @@
+/*
+
+  In this problem we need to find the index of majority element which occure more than n/2+1 times in a array 
+  when the size of the array is n.
+    
+*/
+
+
+
+int find_Majority_Index ( int arr[], int size )
+{
+    int res = 0;
+    int count  = 1;
+    
+    for( int i = 1; i<n; i++ )
+    {
+        if ( arr[res] == arr[i] )
+            count++;
+        else
+            count--;
+        if( count == 0 )
+         {
+            res = i;
+            count = 1;
+         }
+    }
+    
+    count = 0;
+    
+    for( int i=0; i<n ;i++ )
+    {
+      if( arr[res] == arr[i] )
+          count++;
+          
+     }
+     
+     if( count<=n/2) 
+        res = -1
+    
+    return res;
+}
